@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: 'Font baru 2';
+        src: url('font.ttf');
+      }
+
+      /* @font-face {
+        font-family: 'Font Baru';
+        src: url('font.ttf');
+      } */
+
+      html {
+        font-size: 16px;
+        font-family: 'Font baru 2', Arial, Helvetica, sans-serif;
+        /* font-family: 'Font Baru','Times New Roman', Times, serif; */
+      }
+
+      .container-for-child p:nth-last-child(2) {
+        color: red;
+      }
+
+      .container-for-child > div {
+        font-size: 1rem;
+      }
+
+      .mcd-image {
+        height: 100px;
+        width: 100px;
+      }
+
+      div {
+        /* font-size: 2em; */
+        /* font-size: 2rem; */
+      }
+
+      p {
+        /* font-size: 1em; */
+        font-size: 1rem;
+      }
+
+      .div-vh {
+        height: 50vh;
+        width: 50vw;
+        background-color: blue;
+      }
+
+      .div-vh-child {
+        height: 50%;
+        width: 50%;
+        background-color: green;
+      }
+
+      .learn-spacing {
+        /* display: inline-block; */
+        height: 100px;
+        width: 100px;
+        background-color: chocolate;
+        color: white;
+        border: 1px solid black;
+
+        margin: 100px;
+        padding: 16px;
+
+        /* padding-top: 8px;
+        padding-bottom: 8px;
+
+        padding-left: 16px;
+        padding-right: 16px; */
+
+        /* padding: 8px 16px 10px; */
+        /* padding: 8px 9px 10px 11px */
+      }
+
+      .learn-height-and-width {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 16px;
+        padding: 16px;
+
+        overflow-y: scroll;
+        cursor: pointer;
+      }
+
+      .learn-text p {
+        text-align: justify;
+        text-transform: none;
+        /* width: 200px; */
+        /* font-weight: 900; */
+        /* word-spacing: 50px; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Session 3</h1>
+    <div class="container-for-child">
+      <p>First</p>
+      <div>Second Div</div>
+      <p>Second</p>
+      <p>Third</p>
+      <p>Fourth</p>
+      <div>Fourth Div</div>
+      <p>Fifth</p>
+    </div>
+    <hr />
+    <div class="container-for-child">
+      <p>First</p>
+      <p>Second</p>
+      <p>Third</p>
+      <p>Fourth</p>
+      <p>Fifth</p>
+    </div>
+    <hr />
+    <img class="mcd-image" src="https://mcdonalds.co.id/assets/img/menu/menu-pages.png" alt="Image not loaded" />
+    <hr />
+    <div class="div-vh">
+      <div class="div-vh-child"></div>
+    </div>
+    <hr />
+    <div class="learn-spacing">
+      Content
+    </div>
+    <hr />
+    <div class="learn-height-and-width">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+    <hr />
+    <div class="learn-text">
+      Learn text
+      <p>orem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eius quae suscipit, quam quo in. Iure, saepe dignissimos. Ipsum, minus quisquam provident laborum mollitia odio unde rem itaque cumque officiis.<br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eius quae suscipit, quam quoollitia odio unde rem itaque cumque officiis. <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eius quae suscipit, quam quo in. Iure, saepe dignissimos. Ipsum, minus quisquam provident laborum mollitia odio unde rem itaque cumque officiis. <br> Lorem ipsum dolor sit amet consecteIure, saepe dignissimos. Ipsum, minus quisquam provident laborum mollitia odio unde rem itaque cumque officiis.</p>
+    </div>
+  </body>
+</html>
