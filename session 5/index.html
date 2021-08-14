@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+   <style>
+      /* .container {
+        height: 100px;
+        width: 100px;
+        border: 2px solid white;
+        background-color: red;
+        margin: 20px;
+        display: none;
+      }
+
+      .other-container {
+        height: 100px;
+        width: 100px;
+        border: 2px solid white;
+        background-color: green;
+        margin: 20px;
+      } */
+
+      /* START - Navigation Bar */
+      
+      /* body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        background-color: black;
+      }
+
+      .header-container-list {
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .header-item {
+        list-style: none;
+        display: inline-block;
+        color: white;
+        padding: 10px;
+      }
+
+      .about-item-list {
+        position: relative;
+      }
+
+      .about-item-list:hover .about-container-list {
+        display: block;
+      }
+
+      .about-container-list {
+        position: absolute;
+        padding: 10px;
+        background-color: red;
+        top: 36px;
+        display: none;
+      }
+
+      .about-item {
+        padding: 10px;
+      }
+
+      .about-item:hover {
+        color: white;
+        background-color: black;
+      }
+      
+      .about-item a {
+        text-decoration: none;
+      } */
+
+      /* END - Navigation Bar */
+
+      /* START - Flex */
+
+      /* .container-flex {
+        height: 500px;
+        background-color: coral;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: flex-start;
+      }
+
+      .container-flex-item {
+        height: 100px;
+        width: 100px;
+        background-color: black;
+        border: 1px solid white;
+        padding: 16px;
+        color: white;
+      }
+
+      .container-flex-item:nth-child(odd) {
+        height: 150px;
+      } */
+
+      /* END - Flex */
+
+      /* START - RESPONSIVE */
+      .container-image img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      .container-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .container-item {
+        background-color: black;
+        border: 1px solid white;
+        height: 200px;
+        width: 300px;
+        color: white;
+      }
+
+      .container-title-mobile {
+        display: none;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container-title-mobile {
+          display: block;
+        }
+
+        .container-title {
+          color: red;
+        }
+
+        .container-list {
+          flex-direction: column-reverse;
+          align-items: center;
+        }
+
+        .container-item {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        .container-title {
+          color: green;
+        }
+      }
+      /* END - RESPONSIVE */
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container">Halo</div>
+    <div class="container">Container</div>
+    <div class="other-container">Other Container</div> -->
+
+    <!-- START - Navigation Bar -->
+
+    <!-- <div class="header">
+      <ul class="header-container-list">
+        <li class="header-item">Home</li>
+        <li class="header-item about-item-list">
+          About us
+          <ul class="about-container-list">
+            <li class="about-item">Education</li>
+            <li class="about-item">Info</li>
+            <li class="about-item"><a href="https://google.com" target="_blank">Contact</a></li>
+          </ul>
+        </li>
+        <li class="header-item">More</li>
+      </ul>
+    </div> -->
+
+    <!-- END - Navigation Bar -->
+
+    <!-- START - Flex  -->
+
+    <!-- <div class="container-flex">
+      <div class="container-flex-item">First</div>
+      <div class="container-flex-item">Second</div>
+      <div class="container-flex-item">Third</div>
+      <div class="container-flex-item">Fourth</div>
+      <div class="container-flex-item">Fifth</div>
+      <div class="container-flex-item">Sixth</div>
+
+      <div class="container-flex-item">First</div>
+      <div class="container-flex-item">Second</div>
+      <div class="container-flex-item">Third</div>
+      <div class="container-flex-item">Fourth</div>
+      <div class="container-flex-item">Fifth</div>
+      <div class="container-flex-item">Sixth</div>
+
+      <div class="container-flex-item">First</div>
+      <div class="container-flex-item">Second</div>
+      <div class="container-flex-item">Third</div>
+      <div class="container-flex-item">Fourth</div>
+      <div class="container-flex-item">Fifth</div>
+      <div class="container-flex-item">Sixth</div>
+    </div> -->
+
+    <!-- END - Flex  -->
+
+    <!-- START - RESPONSIVE -->
+    
+    <div class="container-image">
+      <h1 class="container-title">Ini gambar</h1>
+      <p class="container-title-mobile">Ini untuk mobile</p>
+      <div class="container-list">
+        <div class="container-item">
+          First
+        </div>
+        <div class="container-item">
+          Second
+        </div>
+        <div class="container-item">
+          Third
+        </div>
+      </div>
+      <img src="images/pemain-bola.jpeg" />
+    </div>
+
+    <!-- END - RESPONSIVE -->
+  </body>
+</html>
