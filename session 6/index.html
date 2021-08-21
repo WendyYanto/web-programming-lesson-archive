@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+      
+      .green {
+        background-color: green;
+      }
+
+      /* .container {
+        background-color: black;
+        height: 100px;
+        width: 100px;
+        color: white;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          background-color: red;
+        }
+      } */
+
+      /* START - MANUAL GRID */
+      /* .container-item {
+        float: left;
+        height: 100px;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      .col-2 {
+        width: calc(100%/2);
+      }
+
+      .col-3 {
+        width: calc(100%/3);
+      }
+
+      .col-4 {
+        width: calc(100%/4);
+      }
+
+      .col-5 {
+        width: calc(100%/5);
+      }
+
+      .col-12 {
+        width: calc(100%/12);
+      } */
+      /* END - MANUAL GRID */
+
+      /* START - DISPLAY GRID */
+      .container-grid {
+        display: grid;
+        /* grid-template-columns: auto auto auto; */
+
+        /* grid-template-columns: 50% repeat(3, 10%) 20%;  */
+        /* grid-template-columns: 50% 10% 10% 10% 20% */
+
+        /* grid-template-columns: repeat(3, calc(100%/3)); */
+
+        grid-template-columns: 50% 10% 1fr 30%;
+        grid-template-rows: 100px 200px;
+        column-gap: 30px;
+        /* grid-gap: 20px; */
+        /* column-gap: 15px;
+        row-gap: 20px; */
+
+        /* grid-gap: 20px; */
+      }
+
+      
+      .container-grid-item {
+        color: --base-white;
+        /* height: 100px; */
+      }
+
+      .second-grid-item {
+        /* grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3; */
+
+        /* grid-column: 3/4;
+        grid-row: 2/3; */
+      }
+
+      .container-grid-template-area {
+        display: grid;
+        grid-template-areas: 
+          "header header header"
+          "sidebar content content"
+          "sidebar footer footer";
+        grid-gap: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container-grid-template-area {
+          grid-template-areas: 
+            "header header"
+            "content content"
+            "footer sidebar"
+            "footer sidebar";
+        }
+      }
+
+      .container-grid-template-area-header {
+        height: 200px;
+        background-color: red;
+        grid-area: header;
+      }
+
+      .container-grid-template-area-content {
+        background-color: blue;
+        height: 200px;
+        grid-area: content;
+      }
+
+      .container-grid-template-area-footer {
+        background-color: green;
+        height: 200px;
+        grid-area: footer;
+      }
+
+      .container-grid-template-area-sidebar {
+        background-color: yellow;
+        /* height: 200px; */
+        grid-area: sidebar;
+      }
+      /* END - DISPLAY GRID */
+    </style>
+  </head>
+  <body>
+    <!-- START - MANUAL GRID -->
+    <!-- <div class="container">
+      <div class="container-item red col-3"></div>
+      <div class="container-item blue col-3"></div>
+      <div class="container-item green col-3"></div>
+
+      <div class="container-item green col-2"></div>
+      <div class="container-item red col-2"></div>
+
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+      <div class="container-item red col-12"></div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div>
+      asasda
+    </div> -->
+    <!-- END - MANUAL GRID -->
+
+    <!-- START - DISPLAY GRID -->
+    <!-- <div class="container-grid">
+      <div class="container-grid-item blue">FIRST</div>
+      <div class="container-grid-item second-grid-item red">SECOND</div>
+      <div class="container-grid-item green">THIRD</div>
+      <div class="container-grid-item red">FOURTH</div>
+      <div class="container-grid-item green">FiFTH</div>
+      <div class="container-grid-item blue">SIXtH</div>
+    </div> -->
+
+    <div class="container-grid-template-area">
+      <div class="container-grid-template-area-footer">FOOTER</div>
+      <div class="container-grid-template-area-content">CONTENT</div>
+      <div class="container-grid-template-area-header">HEADER</div>
+      <div class="container-grid-template-area-sidebar">SIDEBAR</div>
+    </div>
+
+    <div>
+      Halo
+    </div>
+    <!-- END - DISPLAY GRID -->
+
+    <script src="./index.js"></script>
+  </body>
+</html>
