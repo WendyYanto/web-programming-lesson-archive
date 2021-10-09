@@ -75,13 +75,13 @@
 
 // THIRD - EASY CHALLENGE
 
-function getWealthiest(accounts) {
-  let wealthiestNumber = 0
+// function getWealthiest(accounts) {
+//   let wealthiestNumber = 0
 
-  // Logic
+//   // Logic
 
-  return wealthiestNumber
-}
+//   return wealthiestNumber
+// }
 
 // expected: 6
 // console.log(getWealthiest([[1,2,3], [3,2,1]]))

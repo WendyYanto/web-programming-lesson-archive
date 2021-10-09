@@ -70,26 +70,26 @@ function getNotAppearedNumbers(number) {
 // FOURTH - EASY CHALLENGE
 
 // FIFTH - EASY
-const numbers = new Set()
+// const numbers = new Set()
 
-function addItems(number) {
-  numbers.add(number)
-}
+// function addItems(number) {
+//   numbers.add(number)
+// }
 
-function printItems() {
-  console.log([...numbers])
-}
+// function printItems() {
+//   console.log([...numbers])
+// }
 
-addItems(5)
-addItems(5)
-addItems(5)
-addItems(6)
-addItems(7)
-addItems(7)
-addItems(7)
-addItems(7)
-addItems(8)
+// addItems(5)
+// addItems(5)
+// addItems(5)
+// addItems(6)
+// addItems(7)
+// addItems(7)
+// addItems(7)
+// addItems(7)
+// addItems(8)
 
-// Expected: [5,6,7,8]
-printItems()
-// FIFTH - EASY
+// // Expected: [5,6,7,8]
+// printItems()
+// // FIFTH - EASY
