@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <style>
+      p:nth-child(2) {
+        color: red;
+      }
+
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <p id="first-root-p" class="root-child-class red black green">Halo 1</p>
+      <p id="second-root-p" class="root-child-class">Halo 2</p>
+      <p id="third-root-p" class="root-child-class">Halo 3</p>
+      <p id="fourth-root-p" class="root-child-class" style="display: none;">Halo 4</p>
+    </div>
+
+    <div id="second-root">
+      <p class="root-child-class">ini dluar root hi 1</p>
+      <p class="root-child-class">ini dluar root hi 2</p>
+      <p class="root-child-class">ini dluar root hi 3</p>
+      <p class="root-child-class">ini dluar root hi 4</p>
+      <p class="root-child-class">ini dluar root hi 5</p>
+    </div>
+    
+    <img 
+      id="image" 
+      src="https://images.tokopedia.net/img/cache/200-square/attachment/2018/8/21/8470985/8470985_090882d9-32fb-4437-9bef-f50ad3e831af.png.webp?ect=4g" />
+
+    <script>
+      const root = document.getElementById('root')
+      const firstRootP = document.getElementById('first-root-p')
+      const secondRootP = document.getElementById('second-root-p')
+
+      // console.log(secondRootP)
+      // console.log(firstRootP)
+      // console.log(secondRootP.previousElementSibling)
+
+      // console.log(firstRootP.parentElement == secondRootP.parentElement)
+      // console.log(firstRootP.parentElement === secondRootP.parentElement)
+
+      // const childrenElements = document.getElementsByClassName('root-child-class')
+      // console.log(childrenElements)
+
+      // const paragraphs = document.getElementsByTagName('p')
+      // console.log(paragraphs)
+
+      // const secondRoot = document.getElementById('second-root')
+      // console.log(secondRoot.getElementsByTagName('p'))
+
+      // Single
+      // const querySelector = document.querySelector('p:nth-child(2)')
+      // console.log(querySelector)
+
+      // Plural
+      // const querySelectorAll = document.querySelectorAll('p:nth-child(odd)')
+      // console.log(querySelectorAll)
+
+      // console.log(document.title)
+      // document.title = "Ganti baru"
+
+      // setTimeout(() => {
+      //   document.location.reload()
+      // }, 5000)
+
+      // setTimeout(() => {
+      //   alert('Udh 5 detik bro')
+      // }, 5000);
+
+      // setInterval(() => {
+      //   alert('Udh 5 detik bro')
+      // }, 5000)
+
+      // document.write('haaa')
+
+      // const secondRoot = document.getElementById('second-root')
+        
+      // setTimeout(() => {
+      //   secondRoot.innerText = "<p><b>Ini bold</b> Haloooo </p>"
+      // }, 3000)
+
+      // const image = document.getElementById('image')
+      // console.log(image.getAttribute('src'))
+
+      // console.log(firstRootP.classList.contains('red'))
+
+      // setTimeout(() => {
+      //   // image.setAttribute('src', 'https://images.tokopedia.net/img/cache/300-square/VqbcmM/2021/6/20/f46bee0d-a296-4f6f-9ce6-169e70504ef8.jpg.webp?ect=4g')
+      //   // const root = document.getElementById('root')
+      //   // root.style.backgroundColor = 'red'
+      //   // root.style.color = 'black'
+
+      //   firstRootP.classList.add('red')
+      // }, 3000)
+
+      // setTimeout(() => {
+      //   firstRootP.classList.remove('red')
+      // }, 6000)
+    </script>
+  </body>
+</html>
