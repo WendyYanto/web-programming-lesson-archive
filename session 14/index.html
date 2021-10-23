@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        margin-top: 20px;
+      }
+
+      .mouse-enter {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <button onclick="showAlert()">Click saya dong 1</button>
+      <button id="button">Click saya dong</button>
+
+      <div id="box" class="box">
+      </div>
+
+      <p id="box-info">mouse out</p>
+
+      <input type="text" id="input-text" placeholder="Add Text" />
+    </div>
+
+    <script>
+      // const root = document.getElementById('root')
+      
+      // const paragraph = document.createElement('p')
+      // // <p></p>
+      // const text = document.createTextNode('Hello from JS')
+      // paragraph.appendChild(text)
+
+      // root.appendChild(paragraph)
+      // root.innerHTML = "<h1>Hello from JS</h1>"
+      
+      // function showAlert() {
+      //   alert('Button is clicked')
+      // }
+
+      // const button = document.getElementById('button')
+
+      // button.addEventListener('click', function(event) {
+      //   showAlert()
+      // })
+
+      // button.addEventListener('click', function(event) {
+      //   console.log('click also')
+      // })
+
+      const box = document.getElementById('box')
+      const boxInfo = document.getElementById('box-info')
+
+      box.addEventListener('mouseenter', function(event) {
+        box.classList.add('mouse-enter')
+
+        boxInfo.innerText = "mouse entered"
+      })
+
+      box.addEventListener('mouseleave', function(event) {
+        box.classList.remove('mouse-enter')
+
+        boxInfo.innerText = "mouse out"
+      })
+
+      const inputText = document.getElementById('input-text')
+
+      inputText.addEventListener('keyup', function(event) {
+        // ketika enter berarti show alert
+        if (event.key === 'Enter') {
+          // alert('Enter clicked')
+          const value = inputText.value
+          
+          if (value === 'google') {
+            window.location.href = "https://www.google.com"
+            // window.open('https://www.google.com')
+          } else {
+            alert(value)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
+
+<!-- FROM HTML <p>Helo from JS</p> -->
