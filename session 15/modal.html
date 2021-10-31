@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .modal-content {
+        max-width: 500px;
+        min-height: 500px;
+        background-color: white;
+        margin: 100px auto 0;
+        padding: 20px;
+      }
+
+      .modal-hide {
+        /* visibility: hidden; */
+        display: none;
+      }
+
+      .modal-show {
+        /* visibility: visible; */
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">Show modal</button>
+    <div id="modal" class="modal modal-hide">
+      <div id="modal-content" class="modal-content">
+        Ini content ya bro
+      </div>
+    </div>
+    
+    <script> 
+      const button = document.getElementById('button')
+      const modal = document.getElementById('modal')
+      const modalContent = document.getElementById('modal-content')
+
+      button.addEventListener('click', event => {
+        modal.classList.remove('modal-hide')
+        modal.classList.add('modal-show')
+      })
+
+      modal.addEventListener('click', event => {
+        modal.classList.remove('modal-show')
+        modal.classList.add('modal-hide')
+      })
+
+      modalContent.addEventListener('click', event => {
+        event.stopPropagation()
+      })
+    </script>
+  </body>
+</html>
