@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ini document baru</title>
+  <style>
+    .form-group {
+      padding: 16px;
+    }
+
+    .error-helper {
+      color: red;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .error-form-group {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="form-group">
+      <input type="text" id="usernameText" placeholder="Input name"/>
+      <p id="errorUsernameText" class="error-helper hide"></p>
+    </div>
+    <div class="form-group">
+      <input type="password" id="passwordText" placeholder="Input password"/>
+      <p id="errorPasswordText" class="error-helper hide"></p>
+    </div>
+    <div class="form-group">
+      <button id="button">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    const submitButton = document.getElementById('button')
+    const usernameElement = document.getElementById('usernameText')
+    const errorUsernameElement = document.getElementById('errorUsernameText')
+    const usernameFormGroupElement = usernameElement.parentElement
+
+    const passwordElement = document.getElementById('passwordText')
+    const errorPasswordElement = document.getElementById('errorPasswordText')
+    const passwordFormGroupElement = passwordElement.parentElement
+
+    button.addEventListener('click', (event) => {
+      validateData()
+    })
+
+    usernameElement.addEventListener('focus', (event) => {
+      errorUsernameElement.classList.add('hide')
+      errorUsernameElement.classList.remove('show')
+
+      usernameFormGroupElement.classList.remove('error-form-group')
+    })
+
+    passwordElement.addEventListener('focus', (event) => {
+      errorPasswordElement.classList.add('hide')
+      errorPasswordElement.classList.remove('show')
+
+      passwordFormGroupElement.classList.remove('error-form-group')
+    })
+
+    // EXAMPLE: BLUR
+    // usernameElement.addEventListener('blur', event => {
+    //   validateData()
+    // })
+
+    // passwordElement.addEventListener('blur', event => {
+    //   validateData()
+    // })
+
+    function validateData() {
+      const username = usernameElement.value
+
+      let isUsernameError = true
+      let isPasswordError = true
+
+      if (username.length == 0) {
+        errorUsernameElement.innerText = "Username cannot empty !"
+        showUsernameError()
+      } else if (username.length <= 5) {
+        errorUsernameElement.innerText = "Username should more than 5 !"
+        showUsernameError()
+      } else {
+        isUsernameError = false
+      }
+
+      const password = passwordElement.value
+
+      if (password.length == 0) {
+        errorPasswordElement.innerText = "Password cannot empty !"
+        showPasswordError()
+      } else if (password.length <= 8) {
+        errorPasswordElement.innerText = "Password should more than 8 !"
+        showPasswordError()
+      } else {
+        isPasswordError = false
+      }
+
+      if (!isUsernameError && !isPasswordError) {
+        alert('Data valid')
+      }
+    }
+
+    function showUsernameError() {
+      errorUsernameElement.classList.remove('hide')
+      errorUsernameElement.classList.add('show')
+        
+      usernameFormGroupElement.classList.add('error-form-group')
+    }
+
+    function showPasswordError() {
+      errorPasswordElement.classList.remove('hide')
+      errorPasswordElement.classList.add('show')
+        
+      passwordFormGroupElement.classList.add('error-form-group')
+    }
+  </script>
+</body>

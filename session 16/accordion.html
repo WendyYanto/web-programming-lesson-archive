@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .accordion-item {
+        padding: 4px;
+        margin-bottom: 12px;
+        border: 1px solid grey;
+        border-radius: 4px;
+        max-width: 400px; 
+      }
+
+      .accordion-title {
+        padding: 4px;
+        background-color: #F2F2f2;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .accordion-message {
+        padding: 4px;
+        background-color: #F1f1f1;
+      }
+
+      .accordion-arrow {
+        width: 24px;
+        height: 24px;
+      }
+
+      .arrow-open {
+        transform: rotate(180deg);
+        transition: all ease 0.5s;
+      }
+
+      .arrow-close {
+        transform: rotate(0deg);
+        transition: all ease 0.5s;
+      }
+
+      .show {
+        display: block;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="accordion-item">
+        <div id="title" class="accordion-title">
+          <span>Title</span>
+          <img class="accordion-arrow arrow-close" src="https://cdn.iconscout.com/icon/free/png-256/keyboard-down-arrow-1780093-1518654.png" />
+        </div>
+        <div id="message" class="accordion-message hide">
+          Message
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div id="title" class="accordion-title">
+          <span>Title 2</span>
+          <img class="accordion-arrow arrow-close" src="https://cdn.iconscout.com/icon/free/png-256/keyboard-down-arrow-1780093-1518654.png" />
+        </div>
+        <div id="message" class="accordion-message hide">
+          Message 2
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div id="title" class="accordion-title">
+          <span>Title 3</span>
+          <img class="accordion-arrow arrow-close" src="https://cdn.iconscout.com/icon/free/png-256/keyboard-down-arrow-1780093-1518654.png" />
+        </div>
+        <div id="message" class="accordion-message hide">
+          Message 3
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div id="title" class="accordion-title">
+          <span>Title 4</span>
+          <img class="accordion-arrow arrow-close" src="https://cdn.iconscout.com/icon/free/png-256/keyboard-down-arrow-1780093-1518654.png" />
+        </div>
+        <div id="message" class="accordion-message hide">
+          Message 4
+        </div>
+      </div>
+    </div> 
+    <script>
+      const titles = document.getElementsByClassName('accordion-title')
+
+      for (let title of titles) {
+        title.addEventListener('click', onAccordionClick)
+      }
+
+      function onAccordionClick(event) {
+        const target = event.target
+        const parent = target.parentElement
+
+        const image = parent.getElementsByClassName('accordion-arrow')[0]
+        const message = parent.getElementsByClassName('accordion-message')[0]
+
+        const title = parent.getElementsByClassName('accordion-title')[0]
+        
+        if (!message) {
+          console.log('message not found')
+          return
+        }
+
+        if (message.classList.contains('hide')) {
+          show(message, image)
+          hideRemainingAccordions(title)
+        } else {
+          hide(message, image)
+        }
+      }
+
+      function show(messageElement, imageElement) {
+        messageElement.classList.remove('hide')
+        messageElement.classList.add('show')
+
+        imageElement.classList.add('arrow-open')
+        imageElement.classList.remove('arrow-close')
+      }
+
+      function hideRemainingAccordions(excludedTitle) {
+        for (let title of titles) {
+            if (title == excludedTitle) continue
+            const parent = title.parentElement
+            const messageElement = parent.getElementsByClassName('accordion-message')[0]
+            const imageElement = parent.getElementsByClassName('accordion-arrow')[0]
+
+            hide(messageElement, imageElement)
+          }
+      }
+      
+      function hide(messageElement, imageElement) {
+        messageElement.classList.remove('show')
+        messageElement.classList.add('hide')
+
+        imageElement.classList.add('arrow-close')
+        imageElement.classList.remove('arrow-open')
+      }
+     </script>
+  </body>
+</html>
