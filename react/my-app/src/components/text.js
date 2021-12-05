@@ -1,9 +1,13 @@
 // import './text.css'
 
-function Text() {
+function Text(props) {
+  const content = props.content
+  const color = props.color || 'red'
+  const backgroundColor = props.backgroundColor || 'black'
+
   return (
-    <div className="text" style={{ color: 'red', backgroundColor: 'black' }}>
-      Welcome to my world
+    <div className="text" style={{ color, backgroundColor }}>
+      { content }
     </div>
   )
 }
