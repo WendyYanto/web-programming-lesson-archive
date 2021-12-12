@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 
 import Text from './components/text'
+import ListItem from './components/list-item'
 
 function App() {
   const [info, setInfo] = useState('Ini Saya')
@@ -13,9 +14,9 @@ function App() {
     setLoading(false)
   }, 2000)
 
-  // setTimeout(() => {
-  //   setInfo('Tulisan lain')
-  // }, 5000)
+  // useEffect(() => {
+  //   console.log('loading is changed')
+  // }, [loading])
 
   function loadComponent() {
     if (loading) {
@@ -38,9 +39,16 @@ function App() {
 
   return (
     <div>
-      {
-        loadComponent()
-      }
+      <div>
+        { loadComponent() }
+      </div>
+      <div>
+        <ul>
+          <ListItem />
+          <ListItem />
+          <ListItem />
+        </ul>
+      </div>
     </div>
   )
 }
