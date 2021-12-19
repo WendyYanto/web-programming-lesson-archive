@@ -10,6 +10,8 @@ function App() {
 
   const [loading, setLoading] = useState(true)
 
+  const names = ["Wendy", "Yanto", "Ferdy", "James", "Jimmy"]
+
   setTimeout(() => {
     setLoading(false)
   }, 2000)
@@ -26,6 +28,10 @@ function App() {
     }
   }
 
+  function loadNames() {
+    return names.map(name => <ListItem key={name} content={name} />)
+  }
+
   // IF 1
 
   // if (a) {
@@ -38,15 +44,13 @@ function App() {
   // a ? b : c
 
   return (
-    <div>
+    <div className='App'>
       <div>
         { loadComponent() }
       </div>
-      <div>
+      <div className='list-item-wrapper'>
         <ul>
-          <ListItem />
-          <ListItem />
-          <ListItem />
+        { loadNames() }
         </ul>
       </div>
     </div>
