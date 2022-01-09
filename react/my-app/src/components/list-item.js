@@ -3,9 +3,9 @@ function ListItem(props) {
   // const content = props.content 
 
   // Object destructuring
-  const { content } = props
+  const { content, onListItemClick } = props
 
-  return <li>{content}</li>
+  return <li onClick={() => onListItemClick(content)}>{content}</li>
 }
 
 export default ListItem

@@ -28,8 +28,20 @@ function App() {
     }
   }
 
+  const clickedItems = []
+
+  function onListItemClick(content) {
+    // alert('Clicked')
+    alert(`Clicked: ${content}`)
+    clickedItems.push(content)
+    console.log(clickedItems)
+  }
+
   function loadNames() {
-    return names.map(name => <ListItem key={name} content={name} />)
+    return names.map(name => <ListItem
+      key={name} 
+      content={name} 
+      onListItemClick={onListItemClick} />)
   }
 
   // IF 1
