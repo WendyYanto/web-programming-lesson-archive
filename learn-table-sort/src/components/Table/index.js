@@ -26,6 +26,18 @@ function Table() {
   ]
 
   const [items, setItems] = useState(defaultItems)
+  const [isAscendingName, setAscendingName] = useState(false)
+  const [ascendingArrowName, setAscendingArrowName] = useState('DEFAULT')
+  
+  // sekarang user -> sorting ASC
+  // click -> sorting DESC
+
+    // sekarang user -> sorting DESC
+  // click -> sorting ASC
+
+  // true dan false
+  // isAscending = true -> ASC (A-Z)
+  // isAscending = false -> DESC (Z-A)
 
   function sortByName() {
     // ambil data yang sudah ke sorting 
@@ -54,8 +66,19 @@ function Table() {
         return 1
       }
     })
+    
+    const sortValue = !isAscendingName
 
-    setItems([...sortedItems])
+    if (sortValue) {
+      setItems([...sortedItems])
+      setAscendingArrowName('ASC')
+    } else {
+      const reversed = sortedItems.reverse()
+      setItems([...reversed])
+      setAscendingArrowName('DESC')
+    }
+
+    setAscendingName(sortValue)
   }
 
   function loadTableItems() {
@@ -64,17 +87,32 @@ function Table() {
     ))
   }
 
+  function renderNameArrow() {
+    if (ascendingArrowName === 'DEFAULT') {
+      return <span>&#8645;</span>
+    } else if (ascendingArrowName === 'ASC') {
+      return <span>&#8595;</span>
+    } else {
+      return <span>&#8593;</span>
+    }
+  }
+
   return (
     <table border="1">
       <tr>
-        <th onClick={sortByName}>Name</th>
+        <th onClick={sortByName}>Name 
+          { renderNameArrow() }
+        </th>
         <th>Age</th>
         <th>Hobby</th>
       </tr>
-
-      {loadTableItems()}
+      { loadTableItems() }
     </table>
   )
 }
 
 export default Table
+
+// ASC -> panah ke bawah (&#8595;)
+// DESC -> panah ke atas (&#8593;)
+// DEFAULT -> panah atas dan bawah (&#8645;)
