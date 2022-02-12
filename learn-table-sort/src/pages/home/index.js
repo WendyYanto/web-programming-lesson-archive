@@ -3,18 +3,48 @@ import { Link, useNavigate } from 'react-router-dom'
 import Card from '../../components/card'
 
 import { UserContext } from '../../context/user-context'
+import { useEffect, useState } from 'react'
+
+import axios from 'axios'
 
 function Home() {
+  const [post, setPost] = useState({})
   const navigate = useNavigate()
 
   function goToContact() {
     navigate('/contact')
   }
+  
+  useEffect(() => {
+    // componentDidMount
+    // function getPost() {
+    //   axios.get("https://jsonplaceholder.typicode.com/posts")
+    //     .then(response => {
+    //       console.log(response)
+    //       console.log('udah kelar ya')
+    //     })
+    //     .catch(errorResponse => console.log(errorResponse))
+
+    //   console.log("saya sudah panggil")
+    // }
+
+    async function getPost() {
+      const response = await axios.get("https://jsonplaceholder.typicode.com/posts/25")
+      setPost(response.data)
+    }
+
+    getPost()
+    // disini seperti biasa , ga perlu nunggu
+    return () => {
+      // componentWillUnMount
+    }
+  }, [])
 
   return (
     <UserContext.Provider value="James">
       <div>
         <h1>React Sort Table</h1>
+        <p>{ post.title }</p>
         <div>
           <Link to="/about-me">To About</Link>
           <Card
