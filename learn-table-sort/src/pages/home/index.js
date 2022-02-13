@@ -17,15 +17,15 @@ function Home() {
   
   useEffect(() => {
     // componentDidMount
-    // function getPost() {
-    //   axios.get("https://jsonplaceholder.typicode.com/posts")
-    //     .then(response => {
-    //       console.log(response)
-    //       console.log('udah kelar ya')
-    //     })
-    //     .catch(errorResponse => console.log(errorResponse))
 
-    //   console.log("saya sudah panggil")
+    // function getPost() {
+    //   console.log('saya mw pinjam pensil')
+
+    //   axios.get("https://jsonplaceholder.typicode.com/posts")
+    //     .then(response => console.log("pensil akhirnya datang"))
+
+    //   console.log("saya sudah request pinjam pensil")
+    //   console.log("saya melakukan hal lain")
     // }
 
     async function getPost() {
