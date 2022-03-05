@@ -7,8 +7,26 @@ import Contact from './pages/contact';
 import Profile from './pages/profile';
 import Photos from './pages/photos'
 import User from './pages/user';
+import { useEffect } from 'react';
+import { getUsers, getMovies, getMaleUsers, getFemaleUsers } from './firebase';
 
 function App() {
+
+  useEffect(() => {
+    async function loadUsers() {
+      const users = await getFemaleUsers()
+      console.log(users)
+    }
+
+    async function loadMovies() {
+      const movies = await getMovies()
+      console.log(movies)
+    }
+
+    loadUsers()
+    loadMovies()
+  }, [])
+
   return (
     <div className="App">
       <Routes>
