@@ -7,23 +7,19 @@ import Contact from './pages/contact';
 import Profile from './pages/profile';
 import Photos from './pages/photos'
 import User from './pages/user';
+import SubscribedUser from './pages/subscribed-user';
+
 import { useEffect } from 'react';
 import { getUsers, getMovies, getMaleUsers, getFemaleUsers } from './firebase';
 
 function App() {
 
   useEffect(() => {
-    async function loadUsers() {
-      const users = await getFemaleUsers()
-      console.log(users)
-    }
-
     async function loadMovies() {
       const movies = await getMovies()
       console.log(movies)
     }
 
-    loadUsers()
     loadMovies()
   }, [])
 
@@ -35,6 +31,7 @@ function App() {
         <Route path="/profile/:username/photo/:photoName" element={<Profile />} />
         <Route path="/photos/:id" element={<Photos />} />
         <Route path="/user" element={<User />} />
+        <Route path="/subscribed-user" element={<SubscribedUser />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </div>

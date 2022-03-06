@@ -1,5 +1,6 @@
+import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection, query, where} from "firebase/firestore";
+import { getFirestore, getDocs, collection, query, where, addDoc} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA0EOdF7HLQWx8LOyxsEMBhNhHodpqqFLw",
@@ -60,4 +61,15 @@ export const getSubscribedFemaleUsers = async () => {
   querySnapshot.forEach(user => users.push(user.data()))
 
   return users
+}
+
+export const createUser = async (name) => {
+  const user = {
+    name: name,
+    age: 20,
+    gender: 'MALE',
+    subscribed: true
+  }
+
+  await addDoc(collection(firestore, 'users'), user)
 }
