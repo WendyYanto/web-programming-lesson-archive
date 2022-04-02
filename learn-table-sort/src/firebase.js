@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection, query, where, addDoc} from "firebase/firestore";
+import { getFirestore, getDocs, collection, query, where, addDoc, deleteDoc, doc, setDoc} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA0EOdF7HLQWx8LOyxsEMBhNhHodpqqFLw",
@@ -19,7 +19,16 @@ export const getUsers = async () => {
   const querySnapshot = await getDocs(collection(firestore, "users"));
   const users = []
 
-  querySnapshot.forEach(user => users.push(user.data()))
+  querySnapshot.forEach(user => {
+    const data = {
+      id: user.id,
+      ...user.data()
+    }
+    // menambahkan object dia sendiri ke object lain
+    // spread operator -> for copy object or array
+
+    users.push(data)
+  })
 
   return users
 }
@@ -63,13 +72,29 @@ export const getSubscribedFemaleUsers = async () => {
   return users
 }
 
-export const createUser = async (name) => {
+export const createUser = async (name, age, gender, subscribed) => {
+  let subscribedValue = false
+
+  if (subscribed === 'true') {
+    subscribedValue = true
+  }
+
   const user = {
     name: name,
-    age: 20,
-    gender: 'MALE',
-    subscribed: true
+    age: age,
+    gender: gender,
+    subscribed: subscribedValue
   }
 
   await addDoc(collection(firestore, 'users'), user)
+}
+
+export const deleteUser = async (id) => {
+  await deleteDoc(doc(firestore, 'users', id))
+  console.log(`successfully delete user with id: ${id}`)
+}
+
+export const updateUser = async (id, user) => {
+  await setDoc(doc(firestore, 'users', id), user)
+  console.log(`successfully update user with id: ${id}`)
 }
